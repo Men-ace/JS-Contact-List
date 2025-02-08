@@ -34,3 +34,18 @@ const dispAppScreen = () => {
   
     fetchUsers(apiEP);
   };
+
+  const fetchUsers = async (url) => {
+    //fetch the user
+    // promise method
+
+    //async await
+    const response = await fetch(url);
+    const data = await response.json();
+    userList = data.results;
+  
+    //   hide the spinner
+    document.querySelector(".showSpinner").style.display = "none";
+    // show the user
+    displayContactlist(userList);
+  };
