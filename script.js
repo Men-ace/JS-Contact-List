@@ -133,3 +133,18 @@ const displayContactlist = (userList) => {
   
     document.getElementById("userCount").innerText = userList.length;
   };
+
+  // search contact
+document.getElementById("search").addEventListener("keyup", (e) => {
+    const { value } = e.target;
+    console.log(value);
+  
+    const filteredUsers = userList.filter((item) => {
+      const name = (item.name.first + " " + item.name.last).toLowerCase();
+  
+      return name.includes(value.toLowerCase());
+    });
+  
+    displayContactlist(filteredUsers);
+  });
+  
