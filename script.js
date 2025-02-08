@@ -16,3 +16,21 @@ slider.addEventListener("change", (e) => {
     label.textContent = "Slide To Unlock";
   }
 });
+
+const dispAppScreen = () => {
+    //hide home screen
+    document.querySelector(".homeScreen").remove();
+  
+    // show app screen
+    document.querySelector(".appScreen").style.display = "block";
+  };
+  
+  const dispContactScreen = () => {
+    //hide app screen
+    document.querySelector(".appScreen").remove();
+  
+    // show contact list screen
+    document.querySelector(".contactListScreen").style.display = "block";
+  
+    fetchUsers(apiEP);
+  };
